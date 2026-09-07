@@ -60,7 +60,7 @@ export function createApp(provider: LlmProvider = new MockProvider()) {
         return;
       }
 
-      response.status(500).json({ error: "generation failed" });
+      response.status(500).type("application/json").json({ error: "generation failed" });
     } finally {
       response.off("close", handleClose);
     }
